@@ -1,11 +1,13 @@
 import { useCallback, useState } from 'react';
 // @ts-ignore
 import { v4 as uuidv4 } from 'uuid';
+import { FaTrashAlt } from 'react-icons/fa';
 import Header from './components/Header';
 
 type Activity = {
   id: string;
   description: string;
+  checked: boolean;
   created: Date;
 }
 
@@ -22,13 +24,18 @@ function App() {
       {
         id: uuidv4(),
         description,
+        checked: false,
         created: new Date()
       }, 
-      ...activities
+      ...oldActivities
     ])
 
     setDescription('')
-  }, [activities, description])
+  }, [description])
+
+  const handleDeleteActivity = useCallback((id: string) => {
+    setActivities(allActivities => allActivities.filter(act => act.id !== id));
+  }, []);
 
   return (
     <>
@@ -62,18 +69,32 @@ function App() {
           <h1 className="font-bold text-2xl">Activities</h1>
           
           <div className="flex flex-col">
-            {activities.map(activity => (
+            {!activities.length && (
+              <span className="italic text-gray-500">No saved activities..</span>
+            )}
+
+            {activities.length > 0 && activities.map(activity => (
               <div key={activity.id} className="flex flex-row justify-between items-center my-2">
                 <div className="flex flex-row items-center">
-                  <input type="checkbox" className="mr-3 default:ring-2" />
+                  <input 
+                    type="checkbox" 
+                    className={`mr-3 default:ring-2 ${activity.checked ? 'italic line-through' : ''}`}
+                    onChange={() => {
+                      const activityIdx = activities.findIndex(idxAct => idxAct.id === activity.id); 
+                      const activityToUpdate = activities[activityIdx];
+                      activityToUpdate.checked = !activityToUpdate.checked;
+                      activities[activityIdx] = activityToUpdate;
+                      setActivities(activities);
+                    }}
+                  />
                   <p>{activity.description}</p>
                 </div>
-                {/* <div className="flex flex-row">
-                  <small>{activity.created.toLocaleDateString()}</small>
-                  <button>
-                    deletar
+                <div className="flex flex-col items-end">
+                  <button className="mb-1" onClick={() => handleDeleteActivity(activity.id)}>
+                    <FaTrashAlt className="text-indigo-500 hover:text-indigo-700 transition-colors" />
                   </button>
-                </div> */}
+                  <small className="text-xs">{activity.created.toDateString()} at {activity.created.toLocaleTimeString()}</small>
+                </div>
               </div>
             ))}
           </div>
