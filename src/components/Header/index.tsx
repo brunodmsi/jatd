@@ -3,7 +3,7 @@ import React from 'react';
 const Header: React.FC = () => {
 	return (
 		<header
-			className="bg-teal-500 p-6"
+			className="bg-indigo-500 p-6"
 		>
 			<div className="items-center text-white">
 				<span className="font-semibold text-xl tracking-tight">Just Another Todo List</span>
