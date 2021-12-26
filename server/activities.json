@@ -1,28 +1,28 @@
 {
-	"activities": [
-		{
-			"id": "1d89a884-0815-4e1d-8f56-a38900a39551",
-			"description": "Learn how to play guitar",
-			"checked": false,
-			"created": "Sat Dec 25 2021 19:35:22 GMT-0300 (Horário Padrão de Brasília)"
-		},
-		{
-			"id": "aa4ce8a1-0910-4c69-b5b3-9f7f4b2b73a7",
-			"description": "Fix Nintendo 64",
-			"checked": false,
-			"created": "Sat Dec 25 2021 19:35:13 GMT-0300 (Horário Padrão de Brasília)"
-		},
-		{
-			"id": "a0e8e269-e336-434a-8098-07364b2d03d4",
-			"description": "Buy vegetables",
-			"checked": true,
-			"created": "Sat Dec 25 2021 19:35:00 GMT-0300 (Horário Padrão de Brasília)"
+  "activities": [
+    {
+      "id": "1d89a884-0815-4e1d-8f56-a38900a39551",
+      "description": "Learn how to play guitar",
+      "checked": false,
+      "created": "Sat Dec 25 2021 19:35:22 GMT-0300 (Horário Padrão de Brasília)"
+    },
+    {
+      "id": "aa4ce8a1-0910-4c69-b5b3-9f7f4b2b73a7",
+      "description": "Fix Nintendo 64",
+      "checked": false,
+      "created": "Sat Dec 25 2021 19:35:13 GMT-0300 (Horário Padrão de Brasília)"
+    },
+    {
+      "id": "a0e8e269-e336-434a-8098-07364b2d03d4",
+      "description": "Buy vegetables",
+      "checked": true,
+      "created": "Sat Dec 25 2021 19:35:00 GMT-0300 (Horário Padrão de Brasília)"
 		},
 		{
 			"id": "788b9542-ac95-466d-b3a8-aad849e6ca4d",
 			"description": "Go to the mall",
 			"checked": true,
 			"created": "Sat Dec 25 2021 19:34:53 GMT-0300 (Horário Padrão de Brasília)"
-		}
-	]
+    }
+  ]
 }
